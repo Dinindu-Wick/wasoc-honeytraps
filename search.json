@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{% for page in site.pages %}
+  {% unless page.search == "exclude" or page.url contains "/assets/" %}
+  {
+    "title"    : "{{ page.title | escape }}",
+    "url"      : "{{ site.baseurl }}{{ page.url | remove: "/" }}",
+    "content"  : "{{ page.content | strip_html | strip_newlines | replace: '\"', '\\\"' | replace: '\n', ' ' | strip | escape }}"
+  }{% unless forloop.last or site.posts.size > 0 %}{% endunless %}{% if forloop.last and site.posts.size == 0 %}{% else %},{% endif %}
+  {% endunless %}
+{% endfor %}
+{% for post in site.posts %}
+  {% unless post.search == "exclude" %}
+  {
+    "title"    : "{{ post.title | escape }}",
+    "url"      : "{{ site.baseurl }}{{ post.url }}",
+    "date"     : "{{ post.date | date: "%b %d, %Y" }}",
+    "content"  : "{{ post.content | strip_html | strip_newlines | replace: '\"', '\\\"' | replace: '\n', ' ' | strip | escape }}"
+  }{% unless forloop.last %},{% endunless %}
+  {% endunless %}
+{% endfor %}
+]
