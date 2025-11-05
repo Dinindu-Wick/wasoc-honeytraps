@@ -1,7 +1,3 @@
----
-layout: null
-permalink: /search.json
----
 [
 {% for page in site.pages %}
   {% unless page.search == "exclude" or page.url contains "/assets/" %}

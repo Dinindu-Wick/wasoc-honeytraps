@@ -3,6 +3,7 @@ description: This site contains the documentation for the Honey Traps project of
 url: https://wagov.github.io/wasoc-honeytraps
 layout: default
 nav_enabled: true
+permalink: /search.json
 
 remote_theme: just-the-docs/just-the-docs
 
