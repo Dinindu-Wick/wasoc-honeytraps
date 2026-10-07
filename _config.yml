@@ -1,6 +1,6 @@
 title: Honey Traps Project
 description: This site contains the documentation for the Honey Traps project offered by the WA Security Operations Center.
-url: https://wagov.github.io
+url: https://dinindu-wick.github.io
 baseurl: /wasoc-honeytraps
 layout: default
 nav_enabled: true
